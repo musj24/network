@@ -24,4 +24,25 @@ ROAS
 
 트러블슈팅
 1. ROAS의 가상 인터페이스에 encapsulation dot1q가 빠진다면?
+
+[증상]
+- VLAN10 PC에서 Default Gateway로 ping 실패
+- VLAN20/30 정상
+
+[확인]
+- show interfaces trunk
+- show ip interface brief
+- show run interface g0/0.10
+
+[원인]
+- Sub-interface에 dot1q encapsulation 설정 누락
+
+[조치]
+- encapsulation dot1q 10 추가
+
+[결과]
+- VLAN10 PC 정상 통신 확인
+
 2. L3 스위치의 ip routing이 빠진다면?
+
+
